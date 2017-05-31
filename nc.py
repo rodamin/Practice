@@ -15,9 +15,9 @@ port = 0
 
 def usage():
 
-    print "DSM Net Tool"
+    print "KSY Net Tool"
     print ""
-    print "Usage: dsmnet.py -t target_host -p port"
+    print "Usage: ksynet.py -t target_host -p port"
     print "-l --listen ===listen on [host]:[port] for imcoming connections"
     print "-e --execute ===execute the given file upon receving a connection"
     print "-c --command ===imitialize a command shell"
@@ -27,8 +27,8 @@ def usage():
     print ""
 
     print "Examples:"
-    print "dsmnet.py -t 192.168.0.1 -p 9999 -l -c"
-    print "echo 'ABCD' | ./dsmnet.py -t 192.168.0.1 -p 135"
+    print "ksynet.py -t 192.168.0.1 -p 9999 -l -c"
+    print "echo 'ABCD' | ./ksynet.py -t 192.168.0.1 -p 135"
 
     sys.exit(0)
 def clinet_sender(buffer):
@@ -119,7 +119,7 @@ def client_handler(client_socket):
             client_socket.send(output)
         if command:
             while True:
-                client_socket.send("<DSM:#>")
+                client_socket.send("<KSY:#>")
 
                 cmd_buffer = ""
 
